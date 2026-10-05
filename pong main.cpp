@@ -19,7 +19,7 @@ const float time_step = 0.017f; //60 fps
 
 sf::Vector2f ball_velocity;
 bool is_player_serving = true;
-const float initial_velocity_x = 100.f;
+const float initial_velocity_x = 200.f;
 const float initial_velocity_y = 60.f;
 const float velocity_multiplier = 1.1f;
 
