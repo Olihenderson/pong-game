@@ -1,20 +1,37 @@
 #include <SFML/Graphics.hpp>
 
-int main(){
-  sf::RenderWindow window(sf::VideoMode({200, 200}), "SFML works!");
-  sf::CircleShape shape(100.f);
-  shape.setFillColor(sf::Color::Blue);
+void init() {
+	// initialise all the objects needed for the game. 
+}
 
-  while (window.isOpen()){
-      sf::Event event;
-      while (window.pollEvent(event)){
-      if (event.type == sf::Event::Closed){
-        window.close();
-      }
-    }
-    window.clear();
-    window.draw(shape);
-    window.display();
-  }
-  return 0;
+void update(float dt) {
+	// Update Everything
+}
+
+void render(sf::RenderWindow& window) {
+	// Draw Everything
+}
+
+void clean() {
+	//free up the memory if necessary.
+}
+
+int main() {
+	//create the window
+	sf::RenderWindow window(sf::VideoMode({ game_width, game_height }), "PONG");
+	//initialise and load
+	init();
+	while (window.isOpen()) {
+		//Calculate dt
+		...
+			window.clear();
+		update(dt);
+		render(window);
+		//wait for the time_step to finish before displaying the next frame.
+		sf::sleep(time_step);
+		//Wait for Vsync
+		window.display()
+	}
+	//Unload and shutdown
+	clean();
 }
